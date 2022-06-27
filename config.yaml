@@ -11,8 +11,35 @@ dotfiles:
     src: zshrc
     dst: ~/.zshrc
     chmod: '644'
+  d_sway:
+    src: config/sway
+    dst: ~/.config/sway
+  d_waybar:
+    src: config/waybar
+    dst: ~/.config/waybar
+  d_bspwm:
+    src: config/bspwm
+    dst: ~/.config/bspwm
+    chmod: '755'
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+  d_polybar:
+    src: config/polybar
+    dst: ~/.config/polybar
+    chmod: '755'
+  f_bashrc:
+    src: bashrc
+    dst: ~/.bashrc
+    chmod: '644'
 profiles:
   urano-lnx:
     dotfiles:
     - d_newsboat
     - f_zshrc
+    - d_sway
+    - d_waybar
+    - d_bspwm
+    - d_nvim
+    - d_polybar
+    - f_bashrc
