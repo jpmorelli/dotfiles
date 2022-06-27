@@ -1,0 +1,13 @@
+config:
+  backup: true
+  create: true
+  dotpath: dotfiles
+dotfiles:
+  d_newsboat:
+    src: newsboat
+    dst: ~/.newsboat
+    chmod: '700'
+profiles:
+  urano-lnx:
+    dotfiles:
+    - d_newsboat
