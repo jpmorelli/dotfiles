@@ -32,6 +32,10 @@ dotfiles:
     src: bashrc
     dst: ~/.bashrc
     chmod: '644'
+  d_starship:
+    src: config/starship
+    dst: ~/.config/starship
+    chmod: '755'
 profiles:
   urano-lnx:
     dotfiles:
@@ -43,3 +47,4 @@ profiles:
     - d_nvim
     - d_polybar
     - f_bashrc
+    - d_starship
