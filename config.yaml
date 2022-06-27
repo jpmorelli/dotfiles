@@ -7,7 +7,12 @@ dotfiles:
     src: newsboat
     dst: ~/.newsboat
     chmod: '700'
+  f_zshrc:
+    src: zshrc
+    dst: ~/.zshrc
+    chmod: '644'
 profiles:
   urano-lnx:
     dotfiles:
     - d_newsboat
+    - f_zshrc
