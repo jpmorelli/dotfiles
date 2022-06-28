@@ -36,6 +36,9 @@ dotfiles:
     src: config/starship
     dst: ~/.config/starship
     chmod: '755'
+  f_starship.toml:
+    src: config/starship.toml
+    dst: ~/.config/starship.toml
 profiles:
   urano-lnx:
     dotfiles:
@@ -48,3 +51,4 @@ profiles:
     - d_polybar
     - f_bashrc
     - d_starship
+    - f_starship.toml
