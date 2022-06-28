@@ -9,6 +9,10 @@ USE_POWERLINE="true"
 #  source /usr/share/zsh/manjaro-zsh-prompt
 #fi
 
+# Alias
+alias icat="kitty +kitten icat"
+alias dotdrop="/home/juan/dotfiles/dotdrop.sh"
+
 ## Starship prompt
 ## ~/.zshrc
 #export STARSHIP_CONFIG=~/.config/starship/starship.toml
