@@ -1,13 +1,40 @@
+# AUTOCOMPLETION
+
+# initialize autocompletion
+autoload -U compinit
+compinit
+
+# history setup
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt EXTENDED_HISTORY
+
+# autocompletion using arrow keys (based on history)
+bindkey '\e[A' history-search-backward
+bindkey '\e[B' history-search-forward
+
+# GENERAL
+
+# (bonus: Disable sound errors in Zsh)
+
+# never beep
+setopt NO_BEEP
+
 # Use powerline
 USE_POWERLINE="true"
+
 # Source manjaro-zsh-configuration
-if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-  source /usr/share/zsh/manjaro-zsh-config
-fi
+#if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
+#  source /usr/share/zsh/manjaro-zsh-config
+#fi
 # Use manjaro zsh prompt
-if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-  source /usr/share/zsh/manjaro-zsh-prompt
-fi
+#if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
+#  source /usr/share/zsh/manjaro-zsh-prompt
+#fi
 
 # Alias
 alias icat="kitty +kitten icat"
@@ -16,12 +43,6 @@ alias dotdrop="/home/juan/dotfiles/dotdrop.sh"
 ## Starship prompt
 ## ~/.zshrc
 eval "$(starship init zsh)"
-
-## History settings
-HISTFILE=~/.zhistory
-HISTSIZE=1000
-SAVEHIST=1000
-setopt appendhistory
 
 ## Path settings
 export PATH=/home/juan/.local/bin:$PATH
