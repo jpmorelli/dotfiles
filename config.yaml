@@ -40,7 +40,7 @@ dotfiles:
     src: config/starship.toml
     dst: ~/.config/starship.toml
 profiles:
-  urano:
+  urano-lnx:
     dotfiles:
     - d_newsboat
     - f_zshrc
