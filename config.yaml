@@ -52,3 +52,12 @@ profiles:
     - f_bashrc
     - d_starship
     - f_starship.toml
+  tierra-lnx:
+    dotfiles:
+    - d_nvim    
+    - d_sway
+    - d_waybar
+    - f_zshrc
+    - d_newsboat
+    - d_starship
+    - f_starship.toml

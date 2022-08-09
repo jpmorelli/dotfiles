@@ -1,47 +1,84 @@
-// Global 
-{
+[{
     "layer": "top",
+    "output": "DP-1",
     "position": "top",
+    "height": 35,
+    "spacing": 0,
+    "margin-left": 5,
+    "margin-top": 5,
+    "ipc": true,
+    "id": "bar-0",
 
-    // If height property would be not present, it'd be calculated dynamically
-    "height": 30,
+    // Choose the order of the modules
 
-    "modules-left": [
-        "custom/launcher",
-        "sway/workspaces",
-        "sway/mode",
-    ],
- 
-    "modules-center": [
-    ],
-
-    "modules-right": [
-        "network",
-        "idle_inhibitor",
-        "memory",
-        "cpu",
-        "pulseaudio",
-        "custom/keyboard-layout",
-        "battery",
-        //"custom/PBPbattery",
-        "backlight#icon",
-        "backlight#value",
-        "clock",
-        "tray",
-        //"custom/weather",
-        "custom/power",
-    ],
-
-    // Modules
-
+    "modules-left":[  "sway/workspaces", "wlr/taskbar"],
+    "modules-right":["custom/media",  "sway/mode", "idle_inhibitor", "custom/updater", "pulseaudio", "cpu", "memory", "temperature", "custom/layout", "backlight", "keyboard-state",  "battery", "battery#bat2", "network", "tray", "clock", "custom/power"],
+    // Modules configuration
+    "sway/mode": {
+         "format": " {}",
+        "max-length": 50
+    },
+    "sway/workspaces": {
+      "format": "{index}{name}",
+      "on-click": "activate",
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 20,
+        "icon-theme": "Star",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "minimize",
+        "on-click-right": "close"
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": " {name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+   "sway/language": {
+    "format": " {}",
+    },
     "idle_inhibitor": {
-        "format": "{icon} ",
-        "format-icons":{
+        "format": "{icon}",
+        "format-icons": {
             "activated": "",
             "deactivated": ""
         }
     },
-
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "Europe/Madrid",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    },
     "battery": {
         "states": {
             // "good": 95,
@@ -51,168 +88,103 @@
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
-
-    "custom/PBPbattery": {
-        "exec": "~/.config/waybar/scripts/PBPbattery.sh",
-        "format": "{}",
+    "battery#bat2": {
+        "bat": "BAT2"
     },
-
-    "clock": {
-        "interval": 10,
-        "format-alt": " {:%e %b %Y}", // Icon: calendar-alt
-        "format": "{:%H:%M}",
-        "tooltip-format": "{:%e %B %Y}"
-    },
-
-    "cpu": {
-        "interval": 5,
-        "format": "  {usage}% ({load})", // Icon: microchip
-        "states": {
-            "warning": 70,
-            "critical": 90,
-        },
-        "on-click": "xfce4-terminal -e 'htop'",
-    },
-
-    "custom/keyboard-layout": {
-        "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
-        // Interval set only as a fallback, as the value is updated by signal
-        "interval": 30,
-        "format": "  {}", // Icon: keyboard
-        // Signal sent by Sway key binding (~/.config/sway/key-bindings)
-        "signal": 1, // SIGHUP
-        "tooltip": false,
-        "on-click": "~/.config/waybar/scripts/keyhint.sh",
-    },
-
-    "memory": {
-        "interval": 5,
-        "format": " {}%", // Icon: memory
-        "on-click": "xfce4-terminal -e 'htop'", 
-        "states": {
-            "warning": 70,
-            "critical": 90
-        }
-    },
-
     "network": {
-        "interval": 5,
-        "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
-        "format-disconnected": "⚠  Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click": "xfce4-terminal -e 'nmtui'",
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "Connected  ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-right": "bash ~/.config/rofi/wifi_menu/rofi_wifi_menu"
     },
-    "network#vpn": {
-        "interface": "tun0",
-        "format": "  {essid} ({signalStrength}%)",
-        "format-disconnected": "⚠  Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-    },
-
-    "sway/mode": {
-        "format": "{}",
-        "tooltip": false
-    },
-
-    "sway/window": {
-        "format": "{}",
-        "max-length": 120
-    },
-
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "disable-markup" : false,
-        "all-outputs": true,
-        "format": "  {icon}  ",
-        //"format":"{icon}",
-        "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-        }
-    },
-
     "pulseaudio": {
-        "scroll-step": 1, // %, can be a float
+        // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}  {format_source}",
-        "format-bluetooth-muted": " {icon}  {format_source}",
-        "format-muted": "婢 {format_source}",
-        "format-source": "{volume}% ",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": "{icon} {format_source}",
+        "format-muted": "{format_source}",
+        "format-source": "",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "וֹ",
-            "headset": "  ",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": [""]
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
-        "on-scroll-up": "pamixer -ui 2",
-        "on-scroll-down": "pamixer -ud 2",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
     },
-
-    "custom/weather": {
-        "exec": "~/.config/waybar/scripts/weather.sh",
-        "format": "{text} {icon}",
+    "custom/media": {
+        "format": "{icon} {}",
         "return-type": "json",
-        "interval": 600,
-        "tooltip-format": "{tooltip}"
+        "max-length": 20,
+        "format-icons": {
+            "spotify": " ",
+            "default": " "
+        },
+        "escape": true,
+        "exec": "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null",
+        "on-click": "playerctl play-pause"
     },
+    "custom/power":{
+        "format": "",
+        "on-click": "wlogout",
+        "on-click-right": "killall wlogout"
+    },
+    "custom/layout":{
+        "format": " ",
+        "on-click": "bash ~/.config/system_scripts/layout.sh"
+    },
+    "custom/updater":{
+        "format": "  {} Updates",
+        "exec": "checkupdates | wc -l",
+        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+        "interval": 15,
+        "on-click": "alacritty -e yay -Syu"
+    }
+},
+{
+    "layer": "top",
+    "output": "HDMI-A-1",
+    "position": "top",
+    "height": 35,
+    "spacing": 0,
+    "margin-left": 5,
+    "margin-top": 5,
+    "ipc": true,
+    "id": "bar-1",
 
-    "tray": {
-        "icon-size": 18,
-        "spacing":10,
-     },
+    // Choose the order of the modules
 
-    "backlight#icon": {
+    "modules-left":[  "sway/workspaces", "wlr/taskbar"],
+    // Modules configuration
+
+    "sway/workspaces": {
+      "format": "{index}{name}",
+      "on-click": "activate",
+    },
+    "wlr/taskbar": {
         "format": "{icon}",
-        "format-icons": [""],
-        "on-scroll-down": "brightnessctl -c backlight set 1%-",
-        "on-scroll-up": "brightnessctl -c backlight set +1%"
-    },
-
-    "backlight#value" :{
-         "format": "{percent}%",
-         "on-scroll-down": "brightnessctl -c backlight set 1%-",
-         "on-scroll-up": "brightnessctl -c backlight set +1%"
-    },
-
-    "custom/firefox": {
-        "format": " ",
-        "on-click": "exec firefox",
-        "tooltip": false
-    },
-
-    "custom/terminal": {
-        "format": " ",
-        "on-click": "exec xfce4-terminal",
-        "tooltip": false
-    },
-
-    "custom/files": {
-        "format": " ",
-        "on-click": "exec thunar",
-        "tooltip": false
-    },
-
-    "custom/launcher": {
-        "format":" ",
-        "on-click": "exec wofi -c ~/.config/wofi/config -I",
-        "tooltip": false,
-    },
-
-    "custom/power": {
-        "format":"⏻",
-        "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
-        "tooltip": false,
-    },
+        "icon-size": 20,
+        "icon-theme": "Star",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "minimize",
+        "on-click-right": "close"
+    }
 }
+]
+
