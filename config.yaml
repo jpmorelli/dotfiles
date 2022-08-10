@@ -39,6 +39,9 @@ dotfiles:
   f_starship.toml:
     src: config/starship.toml
     dst: ~/.config/starship.toml
+  d_wofi:
+    src: config/wofi
+    dst: ~/.config/wofi
 profiles:
   urano-lnx:
     dotfiles:
@@ -54,10 +57,11 @@ profiles:
     - f_starship.toml
   tierra-lnx:
     dotfiles:
-    - d_nvim    
+    - d_nvim
     - d_sway
     - d_waybar
     - f_zshrc
     - d_newsboat
     - d_starship
     - f_starship.toml
+    - d_wofi
