@@ -1,17 +1,14 @@
-[{
+{
     "layer": "top",
-    "output": "DP-1",
     "position": "top",
     "height": 35,
     "spacing": 0,
     "margin-left": 5,
     "margin-top": 5,
-    "ipc": true,
-    "id": "bar-0",
 
     // Choose the order of the modules
 
-    "modules-left":[  "sway/workspaces", "wlr/taskbar"],
+    "modules-left":[  "sway/workspaces"],
     "modules-right":["custom/media",  "sway/mode", "idle_inhibitor", "custom/updater", "pulseaudio", "cpu", "memory", "temperature", "custom/layout", "backlight", "keyboard-state",  "battery", "battery#bat2", "network", "tray", "clock", "custom/power"],
     // Modules configuration
     "sway/mode": {
@@ -21,15 +18,6 @@
     "sway/workspaces": {
       "format": "{index}{name}",
       "on-click": "activate",
-    },
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 20,
-        "icon-theme": "Star",
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "minimize",
-        "on-click-right": "close"
     },
     "keyboard-state": {
         "numlock": true,
@@ -155,36 +143,4 @@
         "interval": 15,
         "on-click": "alacritty -e yay -Syu"
     }
-},
-{
-    "layer": "top",
-    "output": "HDMI-A-1",
-    "position": "top",
-    "height": 35,
-    "spacing": 0,
-    "margin-left": 5,
-    "margin-top": 5,
-    "ipc": true,
-    "id": "bar-1",
-
-    // Choose the order of the modules
-
-    "modules-left":[  "sway/workspaces", "wlr/taskbar"],
-    // Modules configuration
-
-    "sway/workspaces": {
-      "format": "{index}{name}",
-      "on-click": "activate",
-    },
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 20,
-        "icon-theme": "Star",
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "minimize",
-        "on-click-right": "close"
-    }
 }
-]
-
