@@ -55,6 +55,7 @@ profiles:
     - f_bashrc
     - d_starship
     - f_starship.toml
+    - d_wofi
   tierra-lnx:
     dotfiles:
     - d_nvim
