@@ -14,7 +14,7 @@ set $up k
 set $right l
 
 # Terminal emulator
-set $term kitty 
+set $term foot 
 
 # App launcher
 set $menu swaymsg exec wofi 
