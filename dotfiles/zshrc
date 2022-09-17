@@ -1,8 +1,8 @@
 # AUTOCOMPLETION
 
 # initialize autocompletion
-autoload -U compinit
-compinit
+# autoload -U compinit
+autoload -U predict-on
 
 # history setup
 setopt APPEND_HISTORY
@@ -14,8 +14,12 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 
 # autocompletion using arrow keys (based on history)
-bindkey '\e[A' history-search-backward
-bindkey '\e[B' history-search-forward
+#bindkey '\e[A' history-search-backward
+#bindkey '\e[B' history-search-forward
+
+# autocompletion using arrow keys (based on history of same command)
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 # GENERAL
 
@@ -28,13 +32,13 @@ setopt NO_BEEP
 USE_POWERLINE="true"
 
 # Source manjaro-zsh-configuration
-#if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-#  source /usr/share/zsh/manjaro-zsh-config
-#fi
+if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
+  source /usr/share/zsh/manjaro-zsh-config
+fi
 # Use manjaro zsh prompt
-#if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-#  source /usr/share/zsh/manjaro-zsh-prompt
-#fi
+if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
+  source /usr/share/zsh/manjaro-zsh-prompt
+fi
 
 # Alias
 alias icat="kitty +kitten icat"
@@ -42,7 +46,7 @@ alias dotdrop="/home/juan/dotfiles/dotdrop.sh"
 
 ## Starship prompt
 ## ~/.zshrc
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
 
 ## Path settings
 export PATH=/home/juan/.local/bin:$PATH

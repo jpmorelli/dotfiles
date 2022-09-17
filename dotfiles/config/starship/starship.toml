@@ -1,12 +1,12 @@
 # ~/.config/starship.toml
 
 [battery]
-full_symbol = "🔋"
-charging_symbol = "🔌"
-discharging_symbol = "⚡"
+full_symbol = "🔋 "
+charging_symbol = "🔌 "
+discharging_symbol = "⚡ "
 
 [[battery.display]]
-threshold = 30
+threshold = 100
 style = "bold red"
 
 [character]
@@ -17,7 +17,7 @@ min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
 format = " took [$duration]($style)"
 
 [directory]
-truncation_length = 5
+truncation_length = 25
 format = "[$path]($style)[$lock_symbol]($lock_style) "
 
 [git_branch]
@@ -51,7 +51,7 @@ ssh_only = false
 format = "<[$hostname]($style)>"
 trim_at = "-"
 style = "bold dimmed white"
-disabled = true
+disabled = false
 
 [julia]
 format = "[$symbol$version]($style) "
@@ -79,8 +79,8 @@ style = "bold green"
 time_format = "%T"
 format = "🕙 $time($style) "
 style = "bright-white"
-disabled = false
+disabled = true
 
 [username]
 style_user = "bold dimmed blue"
-show_always = false
+show_always = true
