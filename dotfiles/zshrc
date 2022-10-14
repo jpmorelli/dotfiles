@@ -32,13 +32,13 @@ setopt NO_BEEP
 USE_POWERLINE="true"
 
 ## Source manjaro-zsh-configuration
-if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-  source /usr/share/zsh/manjaro-zsh-config
-fi
+#if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
+#  source /usr/share/zsh/manjaro-zsh-config
+#fi
 ## Use manjaro zsh prompt
-if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-  source /usr/share/zsh/manjaro-zsh-prompt
-fi
+#if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
+#  source /usr/share/zsh/manjaro-zsh-prompt
+#fi
 
 # Alias
 alias icat="kitty +kitten icat"
@@ -46,7 +46,8 @@ alias dotdrop="/home/juan/dotfiles/dotdrop.sh"
 
 ## Starship prompt
 ## ~/.zshrc
-# eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+eval "$(starship init zsh)"
 
 ## Path settings
 export PATH=/home/juan/.local/bin:$PATH

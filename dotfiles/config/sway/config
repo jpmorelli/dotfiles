@@ -3,7 +3,7 @@ set $mod Mod4
 
 # Keyboard
 input * {
-    xkb_layout es
+    xkb_layout latam
     xkb_options compose:rctrl
 }
 
