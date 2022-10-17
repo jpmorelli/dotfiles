@@ -14,7 +14,7 @@ set $up k
 set $right l
 
 # Terminal emulator
-set $term foot 
+set $term kitty 
 
 # App launcher
 set $menu swaymsg exec wofi 
@@ -65,7 +65,7 @@ exec_always ~/.config/sway/scripts/clamshell.sh
     bindsym $mod+Shift+c reload
 
     # Exit Sway
-    bindsym $mod+Shift+e exec ~/.config/waybar/scripts/poweroff.sh
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'Salir a de SWAY ? ' -B 'SI, Salir' 'swaymsg exit' 
 
 #
 # Moving around:
