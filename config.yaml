@@ -42,6 +42,13 @@ dotfiles:
   d_wofi:
     src: config/wofi
     dst: ~/.config/wofi
+  d_i3:
+    src: config/i3
+    dst: ~/.config/i3
+    chmod: '755'
+  d_kitty:
+    src: config/kitty
+    dst: ~/.config/kitty
 profiles:
   urano-lnx:
     dotfiles:
@@ -56,6 +63,8 @@ profiles:
     - d_starship
     - f_starship.toml
     - d_wofi
+    - d_i3
+    - d_kitty
   tierra-lnx:
     dotfiles:
     - d_nvim
