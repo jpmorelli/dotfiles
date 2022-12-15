@@ -191,4 +191,5 @@ bar {
 }
 
 # Autostart
+exec_always picom;
 exec_always --no-startup-id ~/.fehbg;
