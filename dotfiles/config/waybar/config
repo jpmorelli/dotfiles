@@ -147,7 +147,7 @@
             "tooltip": false,
             "exec": "sh $HOME/.config/waybar/scripts/mail.sh",
             "interval": 120,
-            "on-click": "geary && swaymsg '[app_id=geary] focus'"
+            "on-click": "thunderbird && swaymsg '[app_id=thunderbird] focus'"
         }
     },
     {
