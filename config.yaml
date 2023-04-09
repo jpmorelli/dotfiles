@@ -54,7 +54,7 @@ dotfiles:
     dst: ~/.config/rofi/rofi_launcher.sh
     chmod: '775'
 profiles:
-  urano:
+  urano-lnx:
     dotfiles:
     - d_newsboat
     - f_zshrc
