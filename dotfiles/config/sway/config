@@ -3,7 +3,7 @@ set $mod Mod4
 
 # Keyboard
 input * {
-    xkb_layout latam
+    xkb_layout es
     xkb_options compose:rctrl
 }
 
@@ -65,7 +65,7 @@ exec_always ~/.config/sway/scripts/clamshell.sh
     bindsym $mod+Shift+c reload
 
     # Exit Sway
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'Salir a de SWAY ? ' -B 'SI, Salir' 'swaymsg exit' 
+    bindsym $mod+Shift+e exec ~/.config/waybar/scripts/poweroff.sh
 
 #
 # Moving around:
