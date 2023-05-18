@@ -2,7 +2,7 @@
 
 # initialize autocompletion
 autoload -U compinit && compinit
-# autoload -U predict-on
+autoload -U predict-on
 
 # history setup
 setopt APPEND_HISTORY
@@ -39,6 +39,8 @@ USE_POWERLINE="true"
 #if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 #  source /usr/share/zsh/manjaro-zsh-prompt
 #fi
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Alias
 alias icat="kitty +kitten icat"
