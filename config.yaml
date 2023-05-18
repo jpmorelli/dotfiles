@@ -52,7 +52,7 @@ dotfiles:
   f_rofi_launcher.sh:
     src: config/rofi/rofi_launcher.sh
     dst: ~/.config/rofi/rofi_launcher.sh
-    chmod: '775'
+    chmod: '755'
 profiles:
   urano-lnx:
     dotfiles:
