@@ -1,6 +1,6 @@
 [submodule "dotdrop"]
 	path = dotdrop
 	url = https://github.com/deadc0de6/dotdrop.git
-[submodule "zsh-autosuggestions"]
-	path = zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "dotfiles/zsh-autosuggestions"]
+	path = dotfiles/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
