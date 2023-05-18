@@ -53,6 +53,9 @@ dotfiles:
     src: config/rofi/rofi_launcher.sh
     dst: ~/.config/rofi/rofi_launcher.sh
     chmod: '755'
+  d_rofi:
+    src: config/rofi
+    dst: ~/.config/rofi
 profiles:
   urano-lnx:
     dotfiles:
@@ -70,6 +73,7 @@ profiles:
     - d_i3
     - d_kitty
     - f_rofi_launcher.sh
+    - d_rofi
   tierra-lnx:
     dotfiles:
     - d_nvim
