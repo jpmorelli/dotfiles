@@ -57,6 +57,9 @@ dotfiles:
   d_rofi:
     src: config/rofi
     dst: ~/.config/rofi
+  d_zsh:
+    src: zsh
+    dst: ~/.zsh
 profiles:
   urano-lnx:
     dotfiles:
@@ -75,6 +78,7 @@ profiles:
     - d_kitty
     - f_rofi_launcher.sh
     - d_rofi
+    - d_zsh
   tierra-lnx:
     dotfiles:
     - d_nvim
