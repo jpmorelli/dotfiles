@@ -24,6 +24,7 @@ dotfiles:
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
+    chmod: '755'
   d_polybar:
     src: config/polybar
     dst: ~/.config/polybar
