@@ -58,7 +58,7 @@ dotfiles:
     src: config/rofi
     dst: ~/.config/rofi
 profiles:
-  urano:
+  urano-lnx:
     dotfiles:
     - d_newsboat
     - f_zshrc
