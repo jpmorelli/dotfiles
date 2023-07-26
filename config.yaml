@@ -85,3 +85,4 @@ profiles:
     - d_starship
     - f_starship.toml
     - d_wofi
+    - d_rofi
