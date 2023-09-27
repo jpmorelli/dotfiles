@@ -120,7 +120,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Starship prompt
-eval "$(starship init bash)"
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
+## Starship prompt
+#eval "$(starship init bash)"
+#export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
+if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+  source /usr/share/powerline/bindings/bash/powerline.sh
+fi
