@@ -92,9 +92,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-## JP Custom aliases
-alias dotdrop=/home/juan/dotfiles/dotdrop.sh
-
+#Custom alias
+alias dotdrop=/home/juan/.dotfiles/dotdrop.sh
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -120,10 +119,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
-## Starship prompt
-#eval "$(starship init bash)"
-#export STARSHIP_CONFIG=~/.config/starship/starship.toml
+### STARSHIP prompt
+# eval "$(starship init bash)"
 
-if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
-  source /usr/share/powerline/bindings/bash/powerline.sh
+## Powerline configuration
+#if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+#  powerline-daemon -q
+#  POWERLINE_BASH_CONTINUATION=1
+#  POWERLINE_BASH_SELECT=1
+#  source /usr/share/powerline/bindings/bash/powerline.sh
+#fi
+
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
 fi

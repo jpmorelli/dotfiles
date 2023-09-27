@@ -87,3 +87,4 @@ profiles:
     - f_starship.toml
     - d_wofi
     - d_rofi
+    - f_bashrc
