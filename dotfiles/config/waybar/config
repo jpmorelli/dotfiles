@@ -4,7 +4,7 @@
         "layer": "top",
         "position": "top",
         "height": 30,
-        "modules-left": ["battery#bat1", "battery#bat2", "disk", "memory", "cpu", "temperature", "pulseaudio", "backlight", "idle_inhibitor"],
+        "modules-left": ["sway/workspaces", "sway/mode","battery#bat1", "battery#bat2", "disk", "memory", "cpu", "temperature", "pulseaudio", "backlight", "idle_inhibitor"],
         "modules-center": ["sway/window"],
         "modules-right": ["network#vpn", "network#wifi", "network#ethernet", "network#disconnected", "custom/mail", "custom/weather", "clock", "custom/poweroff"],
         "sway/window": {
@@ -142,12 +142,6 @@
             "tooltip": false,
             "format": "",
             "on-click": "bash $HOME/.config/waybar/scripts/poweroff.sh"
-        },
-        "custom/mail": {
-            "tooltip": false,
-            "exec": "sh $HOME/.config/waybar/scripts/mail.sh",
-            "interval": 120,
-            "on-click": "thunderbird && swaymsg '[app_id=thunderbird] focus'"
         }
     },
     {
@@ -161,7 +155,7 @@
         "tray": {
             "icon-size": 13,
             "spacing": 10
-        },
+         },
         "wlr/taskbar": {
             "format": "{icon} {name}",
             "icon-size": 13,

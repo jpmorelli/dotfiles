@@ -27,14 +27,15 @@ set $term foot
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $launcher wofi
+set $launcher wofi --show run
 
 include /etc/sway/config-vars.d/*
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/Nextcloud/Backgrounds/Fantasy_China______wallpaper\ \(2\).jpg fill
 #
 # Example configuration:
 #
@@ -76,12 +77,12 @@ exec_always ~/.config/sway/scripts/clamshell.sh
 #
 # Example configuration:
 #
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
+   input "2:7:SynPS/2_Synaptics_TouchPad" {
+       # dwt enabled
+       # tap enabled
+       natural_scroll enabled
+       middle_emulation enabled
+   }
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -282,20 +283,31 @@ bindsym $mod+Shift+s mode "spotify"
 #
 # Volume:
 #
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+#    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+#    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+#    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+#    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 #
 # Screen:
 #
     # Brightness
-    bindsym XF86MonBrightnessUp exec brightlight -pi 5
-    bindsym XF86MonBrightnessDown exec brightlight -pd 5
+#    bindsym XF86MonBrightnessUp exec brightlight -pi 5
+#    bindsym XF86MonBrightnessDown exec brightlight -pd 5
 
     # Screenshots
     bindsym Print exec sh ~/.config/sway/scripts/screenshot.sh
+
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86Search exec bemenu-run
 
 #################
 ### Autostart ###

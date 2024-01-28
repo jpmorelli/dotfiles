@@ -1,5 +1,5 @@
-show=drun
+allow_images=true
+images_size=32
+mode=drun,run
 prompt=search
 insensitive=true
-allow_images=true
-image_size=16
