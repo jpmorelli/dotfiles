@@ -120,15 +120,15 @@ if ! shopt -oq posix; then
 fi
 
 ### STARSHIP prompt
-# eval "$(starship init bash)"
+eval "$(starship init bash)"
 
 ## Powerline configuration in Ubuntu/Debian
-if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-  source /usr/share/powerline/bindings/bash/powerline.sh
-fi
+#if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+#  powerline-daemon -q
+#  POWERLINE_BASH_CONTINUATION=1
+#  POWERLINE_BASH_SELECT=1
+#  source /usr/share/powerline/bindings/bash/powerline.sh
+#fi
 
 ### Powerline configuration in Debian resumed
 #if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
