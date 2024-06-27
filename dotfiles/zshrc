@@ -1,55 +1,32 @@
-# AUTOCOMPLETION
+() {
+  emulate -L zsh
 
-# initialize autocompletion
-autoload -U compinit && compinit
-autoload -U predict-on
+  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# history setup
-setopt APPEND_HISTORY
-setopt SHARE_HISTORY
-HISTFILE=$HOME/.zhistory
-SAVEHIST=1000
-HISTSIZE=999
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt EXTENDED_HISTORY
+  # Determine terminal capabilities.
+  {
+    if ! zmodload zsh/langinfo zsh/terminfo ||
+       [[ $langinfo[CODESET] != (utf|UTF)(-|)8 || $TERM == (dumb|linux) ]] ||
+       (( terminfo[colors] < 256 )); then
+      # Don't use the powerline config. It won't work on this terminal.
+      local USE_POWERLINE=false
+      # Define alias `x` if our parent process is `login`.
+      local parent
+      if { parent=$(</proc/$PPID/comm) } && [[ ${parent:t} == login ]]; then
+        alias x='startx ~/.xinitrc'
+      fi
+    fi
+  } 2>/dev/null
 
-# autocompletion using arrow keys (based on history)
-bindkey '\e[A' history-search-backward
-bindkey '\e[B' history-search-forward
+  if [[ $USE_POWERLINE == false ]]; then
+    # Use 8 colors and ASCII.
+    source /usr/share/zsh/p10k-portable.zsh
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=black,bold'
+  else
+    # Use 256 colors and UNICODE.
+    source /usr/share/zsh/p10k.zsh
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
+  fi
+}
 
-# autocompletion using arrow keys
-#bindkey "^[[A" history-beginning-search-backward
-#bindkey "^[[B" history-beginning-search-forward
-
-# GENERAL
-
-# (bonus: Disable sound errors in Zsh)
-
-# never beep
-setopt NO_BEEP
-
-# Use powerline
-USE_POWERLINE="true"
-
-## Source manjaro-zsh-configuration
-#if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-#  source /usr/share/zsh/manjaro-zsh-config
-#fi
-## Use manjaro zsh prompt
-#if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-#  source /usr/share/zsh/manjaro-zsh-prompt
-#fi
-
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Alias
-alias icat="kitty +kitten icat"
-alias dotdrop="/home/juan/dotfiles/dotdrop.sh"
-
-## Starship prompt
-## ~/.zshrc
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-eval "$(starship init zsh)"
-
-## Path settings
-export PATH=/home/juan/.local/bin:$PATH
