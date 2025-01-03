@@ -51,6 +51,7 @@ dotfiles:
   d_kitty:
     src: config/kitty
     dst: ~/.config/kitty
+    chmod: '755'
   f_rofi_launcher.sh:
     src: config/rofi/rofi_launcher.sh
     dst: ~/.config/rofi/rofi_launcher.sh
