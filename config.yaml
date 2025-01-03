@@ -92,3 +92,4 @@ profiles:
     - d_wofi
     - d_rofi
     - f_bashrc
+    - d_kitty
