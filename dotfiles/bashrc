@@ -142,3 +142,4 @@ fi
 #  POWERLINE_BASH_SELECT=1
 #  . /usr/share/powerline/bash/powerline.sh
 #fi
+export PATH="$PATH:~/.cargo/bin/"
