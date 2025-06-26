@@ -40,7 +40,7 @@ dotfiles:
   f_starship.toml:
     src: config/starship.toml
     dst: ~/.config/starship.toml
-    chmod: '644'
+    chmod: '664'
   d_wofi:
     src: config/wofi
     dst: ~/.config/wofi
