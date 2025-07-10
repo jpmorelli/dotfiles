@@ -3,10 +3,6 @@ config:
   create: true
   dotpath: dotfiles
 dotfiles:
-  d_newsboat:
-    src: newsboat
-    dst: ~/.newsboat
-    chmod: '700'
   f_zshrc:
     src: zshrc
     dst: ~/.zshrc
@@ -65,7 +61,6 @@ dotfiles:
 profiles:
   urano-lnx:
     dotfiles:
-    - d_newsboat
     - f_zshrc
     - d_sway
     - d_waybar
@@ -87,7 +82,6 @@ profiles:
     - d_sway
     - d_waybar
     - f_zshrc
-    - d_newsboat
     - d_starship
     - f_starship.toml
     - d_wofi
