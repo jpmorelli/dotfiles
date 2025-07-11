@@ -78,6 +78,7 @@ profiles:
     - f_config
   tierra-lnx:
     dotfiles:
+    - f_zshrc
     - d_nvim
     - d_sway
     - d_waybar
