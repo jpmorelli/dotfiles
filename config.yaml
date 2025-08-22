@@ -58,6 +58,9 @@ dotfiles:
   f_config:
     src: config/cava/config
     dst: ~/.config/cava/config
+  f_p10k.zsh:
+    src: p10k.zsh
+    dst: ~/.p10k.zsh
 profiles:
   urano-lnx:
     dotfiles:
@@ -89,3 +92,4 @@ profiles:
     - d_rofi
     - f_bashrc
     - d_kitty
+    - f_p10k.zsh
