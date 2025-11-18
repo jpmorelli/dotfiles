@@ -61,6 +61,9 @@ dotfiles:
   f_p10k.zsh:
     src: p10k.zsh
     dst: ~/.p10k.zsh
+  f_vimrc:
+    src: vimrc
+    dst: ~/.vimrc
 profiles:
   urano-lnx:
     dotfiles:
@@ -79,6 +82,7 @@ profiles:
     - f_rofi_launcher.sh
     - d_rofi
     - f_config
+    - f_vimrc
   tierra-lnx:
     dotfiles:
     - f_zshrc

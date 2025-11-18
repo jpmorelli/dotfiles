@@ -1,0 +1,6 @@
+set number
+
+"Vimwiki requirements
+set nocompatible
+filetype plugin on
+syntax on
