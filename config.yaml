@@ -64,6 +64,10 @@ dotfiles:
   f_vimrc:
     src: vimrc
     dst: ~/.vimrc
+  d_vim:
+    src: vim
+    dst: ~/.vim
+    chmod: '755'
 profiles:
   urano-lnx:
     dotfiles:
@@ -97,3 +101,5 @@ profiles:
     - f_bashrc
     - d_kitty
     - f_p10k.zsh
+    - f_vimrc
+    - d_vim

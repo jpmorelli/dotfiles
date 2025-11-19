@@ -1,6 +1,18 @@
 set number
-
-"Vimwiki requirements
 set nocompatible
 filetype plugin on
 syntax on
+
+let g:vimwiki_list = [{'path': '~/Nextcloud/Notas/',
+                      \ 'syntax': 'markdown', 'ext': 'md'}]
+
+let g:vimwiki_global_ext = 0
+
+call plug#begin()
+
+" List your plugins here
+Plug 'tpope/vim-sensible'
+Plug 'vimwiki/vimwiki'
+
+call plug#end()
+
