@@ -68,6 +68,12 @@ dotfiles:
     src: vim
     dst: ~/.vim
     chmod: '755'
+  d_qtile:
+    src: config/qtile
+    dst: ~/.config/qtile
+  d_niri:
+    src: config/niri
+    dst: ~/.config/niri
 profiles:
   urano-lnx:
     dotfiles:
@@ -87,6 +93,8 @@ profiles:
     - d_rofi
     - f_config
     - f_vimrc
+    - d_qtile
+    - d_niri
   tierra-lnx:
     dotfiles:
     - f_zshrc
