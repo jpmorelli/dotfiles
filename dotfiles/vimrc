@@ -1,10 +1,7 @@
 set number
-
-"Vimwiki requirements
 set nocompatible
 filetype plugin on
 syntax on
-
 
 let g:vimwiki_list = [{'path': '~/Nextcloud/Notas/',
                       \ 'syntax': 'markdown', 'ext': 'md'}]
@@ -12,11 +9,37 @@ let g:vimwiki_list = [{'path': '~/Nextcloud/Notas/',
 let g:vimwiki_global_ext = 0
 
 call plug#begin()
-
-" List your plugins here
 Plug 'tpope/vim-sensible'
 Plug 'vimwiki/vimwiki'
-Plug 'preservim/nerdtree'
+Plug 'mattn/emmet-vim' "Great for quickly writing HTML/CSS
+Plug 'mhartington/oceanic-next' "VIM theme
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'jcherven/jummidark.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "fast, fuzzy finding files and performing content-based searches across your project.
+Plug 'jremmen/vim-ripgrep'
+Plug 'preservim/nerdtree' "NERDTree
+Plug 'ryanoasis/vim-devicons' "Provides a file system explorer with nice icons.
+"Plug 'metakirby5/codi.vim'
+Plug 'preservim/nerdcommenter' "Essential for fast commenting/uncommenting.
+Plug 'tpope/vim-surround' "A must-have for manipulating surrounding characters (quotes, parentheses, tags, etc.)
+Plug 'APZelos/blamer.nvim' "Shows Git blame information inline, which can be very useful for context.
+"Plug 'iprabirshrestha/vim-lsp' "LSP (Language Server Protocol)
+Plug 'ycm-core/YouCompleteMe' "Auto-Completion
+Plug 'jiangmiao/auto-pairs' "Automatic Brackets/Paren Closing
 
 call plug#end()
 
+set encoding=UTF-8
+set guifont=BlexMono\ Nerd\ Font
+set ignorecase
+colorscheme OceanicNext
+
+nmap <F6> :NERDTreeToggle<CR>
+nmap <C-_>   <Plug>NERDCommenterToggle
+vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
+
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
+
+runtime macros/matchit.vim "jumps between matching parentheses, brackets, and braces and to work with a much wider range of elements
