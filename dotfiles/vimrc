@@ -13,6 +13,7 @@ Plug 'tpope/vim-sensible'
 Plug 'vimwiki/vimwiki'
 Plug 'mattn/emmet-vim' "Great for quickly writing HTML/CSS
 Plug 'mhartington/oceanic-next' "VIM theme
+Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jcherven/jummidark.vim'
@@ -30,10 +31,12 @@ Plug 'jiangmiao/auto-pairs' "Automatic Brackets/Paren Closing
 
 call plug#end()
 
+set termguicolors
 set encoding=UTF-8
 set guifont=BlexMono\ Nerd\ Font
 set ignorecase
 colorscheme OceanicNext
+"colorscheme nord
 
 nmap <F6> :NERDTreeToggle<CR>
 nmap <C-_>   <Plug>NERDCommenterToggle
