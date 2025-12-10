@@ -26,8 +26,8 @@ input {
 // You will have to remove "/-" and edit it before it takes effect.
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 
-/- output "DP-1" {
-    mode "2560x1440@359.979" // Set resolution and refresh rate
+/- output "LVDS-1" {
+    mode "1366x768@60.002" // Set resolution and refresh rate
     scale 1 // No scaling (use 2 for HiDPI)
 }
 
@@ -39,10 +39,10 @@ binds {
 
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: alacritty" { spawn-sh "alacritty"; }
-    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: wofi" { spawn-sh "wofi"; }
-    MOD+B                               hotkey-overlay-title="Open Browser: brave" { spawn-sh "brave"; }
+    MOD+G				hotkey-overlay-title="Open Browser: google-chrome" { spawn-sh "google-chrome-stable"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
-    
+    MOD+SPACE                           hotkey-overlay-title="Open Launcher: fuzzel" { spawn-sh "fuzzel"; }
+
     // Please choose your own file manager
     MOD+E                             hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
 
@@ -169,10 +169,13 @@ binds {
 // ────────────── Startup Applications ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
-    spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
+    spawn-sh-at-startup "/usr/lib/polkit-gnome-authentication-agent-1 &" // Polkit
     spawn-sh-at-startup "swww-daemon" // Wallpaper daemon
     spawn-sh-at-startup "swww img /home/juan/Nextcloud/Backgrounds/Landscape_RyanSchroeder.jpg" // Set wallpaper
     spawn-sh-at-startup "waybar" // Launch waybar
+    //spawn-sh-at-startup "swaybg -i ~/Nextcloud/Backgrounds/Landscape_RyanSchroeder.jpg -m fill"
+    spawn-at-startup "mako"
+    spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "before-sleep" "swaylock -f"
 
     prefer-no-csd // Disable program decorations
     screenshot-path null // Disable screenshot saving
