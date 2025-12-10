@@ -15,7 +15,7 @@ from libqtile.lazy import lazy
 # ------------------------------
 
 mod = "mod4"
-terminal = "foot"
+terminal = "alacritty"
 launcher = "wofi --show drun"
 font = "JetBrainsMono Nerd Font"
 nord = {
@@ -178,6 +178,16 @@ def nord_bar():
 # ------------------------------
 
 screens = [Screen(top=nord_bar())]
+
+
+#-------------------------------
+# INPUTS
+#-------------------------------
+
+wl_input_rules = {
+       "type:keyboard": InputConfig(kb_layout="es"),
+}
+
 
 # ------------------------------
 # AUTOSTART

@@ -1,16 +1,14 @@
 #!/bin/bash
+options="Shutdown\nReboot\nLogout\nSuspend\nHibernate\nLock\nExit"
+chosen=$(echo -e "$options" | wofi --dmenu --prompt "Power Menu" --width 300 --height 234)
 
-entries="Logout Suspend Reboot Shutdown"
-
-selected=$(printf '%s\n' $entries | wofi --conf=$HOME/.config/wofi/config.power --style=$HOME/.config/wofi/style.widgets.css | awk '{print tolower($1)}')
-
-case $selected in
-  logout)
-    swaymsg exit;;
-  suspend)
-    exec systemctl suspend;;
-  reboot)
-    exec systemctl reboot;;
-  shutdown)
-    exec systemctl poweroff -i;;
+case $chosen in
+  "Shutdown") systemctl poweroff ;;
+  "Reboot")   systemctl reboot ;;
+  "Logout")   niri msg action quit --skip-confirmation ;;
+  "Suspend")  systemctl suspend ;;
+  "Hibernate") systemctl hibernate ;;
+  "Lock")     swaylock ;;
+  "Exit")     exit 0 ;;
+  *)          exit 1 ;;
 esac

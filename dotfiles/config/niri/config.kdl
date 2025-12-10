@@ -41,7 +41,7 @@ binds {
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: alacritty" { spawn-sh "alacritty"; }
     MOD+G				hotkey-overlay-title="Open Browser: google-chrome" { spawn-sh "google-chrome-stable"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
-    MOD+SPACE                           hotkey-overlay-title="Open Launcher: fuzzel" { spawn-sh "fuzzel"; }
+    MOD+SPACE                           hotkey-overlay-title="Open Launcher: wofi" { spawn-sh "wofi -show drun -replace"; }
 
     // Please choose your own file manager
     MOD+E                             hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }

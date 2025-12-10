@@ -1,107 +1,126 @@
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "Clear Sans", "Font Awesome 5 Free Solid";
-    font-size: 13px;
-    min-height: 0;
+    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 1);
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+    background-color: #0f1117;
+    font-size: 14px;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0;
 }
 
-window#waybar.empty {
-    color: rgba(0,0,0,0);
+/* Left-most: Arch icon */
+#custom-appmenu {
+  font-size: 14px;
+/*  background-image: url('/usr/share/icons/nuoveXT2/48x48/actions/stock_refresh.png'); */
+  background-color: #1e222a;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0px 12px;
+    
 }
 
-.topbar {
-    border-bottom: 3px solid rgba(100, 114, 125, 1);
+/* Right-most: Clock */
+#clock {
+    font-size: 14px;
+    background-color: #1e222a;
+    color: #c0c0c0;
+    border-radius: 0px;
+    padding: 0px 8px;
 }
 
-.bottombar {
-    border-top: 3px solid rgba(100, 114, 125, 1);
+/* Active window title */
+#window {
+    font-size: 14px;
+    font-weight: 800;
+    color: #e0e0e0;
+    border-radius: 0px;
+    padding: 4px 12px;
+    background-color: #1e222a;
 }
 
-#workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #ffffff;
+/* Workspace container */
+#niri-workspaces {
+    background: #1e222a;
+    font-weight: bold;
+    border-radius: 0px;
+    font-size: 8px;
+    color: #e0e0e0;
+}
+
+/* Individual workspace buttons */
+#niri-workspaces button {
+    border-radius: 0px;
+    font-size: 8px;
+}
+
+#workspaces button.active {
+    border-radius: 0px;
+    color: #0f1117;
+    background: #188aa1;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 3px #ffffff;
+    border-radius: 0px;
+    background: #0d3531;
+    border-width: 0px;
 }
 
-#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 3px #ffffff;
+/* Power/exit button */
+#custom-exit {
+    background-color: #188aa1;
+    font-size: 14px;
+    font-weight: 800;
+    color: #0f1117;
+    padding: 0px 6px;
+    margin: 2px 2px 2px 0;
 }
 
-#workspaces button.urgent {
-    background-color: #eb4d4b;
+/* Tooltips */
+tooltip {
+    border-radius: 12px;
+    background-color: #0f1117;
+    color: #c0c0c0;
+    padding: 4px 8px;
 }
 
-#mode {
-    background-color: #64727D;
-    border-top: 3px solid #ffffff;
+/* Taskbar */
+#taskbar {
+    background-color: #1e222a;
+    margin: 0px;
+    border-radius: 0px;
+    font-weight: normal;
 }
 
+/* All system info modules */
 #backlight,
-#battery.bat1,
-#battery.bat2,
-#clock,
-#cpu,
-#custom-mail,
-#custom-poweroff,
-#custom-weather,
-#disk,
-#idle_inhibitor,
-#memory,
-#mode,
-#network.vpn,
-#network.wifi,
-#network.ethernet,
-#network.disconnected,
 #pulseaudio,
-#taskbar,
-#temperature,
-#tray {
-    padding: 0 6px;
-    margin: 0 0px;
+#network,
+#bluetooth,
+#battery,
+#tray,
+#custom-updates,
+#custom-notification {
+    background-color: #1e222a;
+    font-size: 14px;
+    font-weight: 800;
+    color: #c0c0c0;
+    border-radius: 0px;
+    padding: 4px 10px;
+}
+
+/* Battery critical warning */
+#battery.critical:not(.charging) {
+    background-color: #e65100;
     color: #ffffff;
+    animation: blink 0.5s linear infinite alternate;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: #0f1117;
+        color: #ffffff;
     }
-}
-
-#battery.bat2.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
-#taskbar button:hover {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 3px #ffffff;
-}
-
-#taskbar button.active {
-    background-color: #64727D;
-    box-shadow: inset 0 3px #ffffff;
 }

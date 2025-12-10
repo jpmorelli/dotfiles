@@ -1,0 +1,33 @@
+require("mason").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = {
+    "pyright",
+    "lua_ls",
+    "tsserver"
+  }
+})
+
+local lspconfig = require("lspconfig")
+
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+-- Python
+lspconfig.pyright.setup({
+  capabilities = capabilities,
+})
+
+-- Lua
+lspconfig.lua_ls.setup({
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      diagnostics = { globals = { "vim" } }
+    }
+  }
+})
+
+-- JavaScript / TypeScript
+lspconfig.tsserver.setup({
+  capabilities = capabilities,
+})
+

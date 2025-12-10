@@ -1,34 +1,25 @@
-#window, #outer-box, #input, #inner-box, #entry {
-    color: white;
-}
-
-#window {
-    background-color: rgba(43, 48, 59, 0.5);
-    border: 3px solid rgb(100, 114, 125);
+window {
+    background-color: #2E3440;
+    border: 2px solid #88C0D0;
     border-radius: 10px;
-}
-
-#outer-box {
-    margin: 10px;
+    padding: 10px;
 }
 
 #input {
-    margin-bottom: 10px;
-    background-color: rgb(43, 48, 59);
-    border: 1px solid white;
-    border-radius: 10px;
+    background-color: #3B4252;
+    color: #ECEFF4;
+    padding: 6px;
+    border: none;
 }
 
-#scroll {
-    margin: 0px;
-}
-
-#text {
-    margin: 5px;
+#entry {
+    background-color: #3B4252;
+    color: #E5E9F0;
+    padding: 6px;
 }
 
 #entry:selected {
-    font-weight: bold;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #88C0D0;
+    color: #2E3440;
 }
+
