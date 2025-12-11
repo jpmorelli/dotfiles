@@ -13,18 +13,10 @@ dotfiles:
   d_waybar:
     src: config/waybar
     dst: ~/.config/waybar
-  d_nvim:
-    src: config/nvim
-    dst: ~/.config/nvim
-    chmod: '755'
   f_bashrc:
     src: bashrc
     dst: ~/.bashrc
     chmod: '644'
-  d_starship:
-    src: config/starship
-    dst: ~/.config/starship
-    chmod: '755'
   f_starship.toml:
     src: config/starship.toml
     dst: ~/.config/starship.toml
@@ -36,9 +28,6 @@ dotfiles:
     src: config/kitty
     dst: ~/.config/kitty
     chmod: '755'
-  d_rofi:
-    src: config/rofi
-    dst: ~/.config/rofi
   f_config:
     src: config/cava/config
     dst: ~/.config/cava/config
@@ -59,34 +48,32 @@ dotfiles:
   d_niri:
     src: config/niri
     dst: ~/.config/niri
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
 profiles:
   urano-lnx:
     dotfiles:
     - f_zshrc
     - d_sway
     - d_waybar
-    - d_nvim
     - f_bashrc
-    - d_starship
     - f_starship.toml
     - d_wofi
     - d_kitty
-    - d_rofi
     - f_config
     - f_vimrc
     - d_qtile
     - d_niri
+    - d_nvim
   tierra-lnx:
     dotfiles:
     - f_zshrc
-    - d_nvim
     - d_sway
     - d_waybar
     - f_zshrc
-    - d_starship
     - f_starship.toml
     - d_wofi
-    - d_rofi
     - f_bashrc
     - d_kitty
     - f_p10k.zsh
