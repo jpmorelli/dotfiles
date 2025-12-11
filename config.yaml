@@ -38,10 +38,6 @@ dotfiles:
   f_vimrc:
     src: vimrc
     dst: ~/.vimrc
-  d_vim:
-    src: vim
-    dst: ~/.vim
-    chmod: '755'
   d_qtile:
     src: config/qtile
     dst: ~/.config/qtile
@@ -78,4 +74,3 @@ profiles:
     - d_kitty
     - f_p10k.zsh
     - f_vimrc
-    - d_vim
