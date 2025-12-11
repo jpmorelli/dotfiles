@@ -4,7 +4,7 @@
 
 window#waybar {
     background-color: #0f1117;
-    font-size: 14px;
+    font-size: 12px;
     border-radius: 0px;
     margin: 0px;
     padding: 0;
@@ -18,7 +18,7 @@ window#waybar {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 0px 12px;
+  padding: 0px 6px;
     
 }
 
