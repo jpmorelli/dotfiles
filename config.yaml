@@ -13,17 +13,9 @@ dotfiles:
   d_waybar:
     src: config/waybar
     dst: ~/.config/waybar
-  d_bspwm:
-    src: config/bspwm
-    dst: ~/.config/bspwm
-    chmod: '755'
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
-    chmod: '755'
-  d_polybar:
-    src: config/polybar
-    dst: ~/.config/polybar
     chmod: '755'
   f_bashrc:
     src: bashrc
@@ -40,17 +32,9 @@ dotfiles:
   d_wofi:
     src: config/wofi
     dst: ~/.config/wofi
-  d_i3:
-    src: config/i3
-    dst: ~/.config/i3
-    chmod: '755'
   d_kitty:
     src: config/kitty
     dst: ~/.config/kitty
-    chmod: '755'
-  f_rofi_launcher.sh:
-    src: config/rofi/rofi_launcher.sh
-    dst: ~/.config/rofi/rofi_launcher.sh
     chmod: '755'
   d_rofi:
     src: config/rofi
@@ -81,16 +65,12 @@ profiles:
     - f_zshrc
     - d_sway
     - d_waybar
-    - d_bspwm
     - d_nvim
-    - d_polybar
     - f_bashrc
     - d_starship
     - f_starship.toml
     - d_wofi
-    - d_i3
     - d_kitty
-    - f_rofi_launcher.sh
     - d_rofi
     - f_config
     - f_vimrc

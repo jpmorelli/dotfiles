@@ -143,5 +143,7 @@ eval "$(starship init bash)"
 #  . /usr/share/powerline/bash/powerline.sh
 #fi
 export PATH="$PATH:~/.cargo/bin/"
-eval "$(starship init bash)"
+
+### Starship prompt
+# eval "$(starship init bash)"
 
