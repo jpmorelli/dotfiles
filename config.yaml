@@ -7,9 +7,6 @@ dotfiles:
     src: zshrc
     dst: ~/.zshrc
     chmod: '644'
-  d_sway:
-    src: config/sway
-    dst: ~/.config/sway
   d_waybar:
     src: config/waybar
     dst: ~/.config/waybar
@@ -51,7 +48,6 @@ profiles:
   urano-lnx:
     dotfiles:
     - f_zshrc
-    - d_sway
     - d_waybar
     - f_bashrc
     - f_starship.toml
@@ -65,7 +61,6 @@ profiles:
   tierra-lnx:
     dotfiles:
     - f_zshrc
-    - d_sway
     - d_waybar
     - f_zshrc
     - f_starship.toml
