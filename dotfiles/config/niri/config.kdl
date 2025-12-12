@@ -26,7 +26,7 @@ input {
 // You will have to remove "/-" and edit it before it takes effect.
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 
-/- output "LVDS-1" {
+/- output "DP-1" {
     mode "1366x768@60.002" // Set resolution and refresh rate
     scale 1 // No scaling (use 2 for HiDPI)
 }
@@ -177,7 +177,7 @@ binds {
     spawn-at-startup "mako"
     spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "before-sleep" "swaylock -f"
 
-    prefer-no-csd // Disable program decorations
+    // prefer-no-csd // Disable program decorations
     screenshot-path null // Disable screenshot saving
 
 // ────────────── Layout Settings ──────────────
