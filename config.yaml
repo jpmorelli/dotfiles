@@ -44,6 +44,9 @@ dotfiles:
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
+  d_fuzzel:
+    src: config/fuzzel
+    dst: ~/.config/fuzzel
 profiles:
   urano-lnx:
     dotfiles:
@@ -69,3 +72,4 @@ profiles:
     - d_kitty
     - f_p10k.zsh
     - f_vimrc
+    - d_fuzzel
