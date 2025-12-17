@@ -47,6 +47,9 @@ dotfiles:
   d_fuzzel:
     src: config/fuzzel
     dst: ~/.config/fuzzel
+  f_zshrc.cachyos:
+    src: zshrc.cachyos
+    dst: ~/.zshrc.cachyos
 profiles:
   urano-lnx:
     dotfiles:
@@ -61,6 +64,7 @@ profiles:
     - d_qtile
     - d_niri
     - d_nvim
+    - f_zshrc.cachyos
   tierra-lnx:
     dotfiles:
     - f_zshrc
