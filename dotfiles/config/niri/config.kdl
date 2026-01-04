@@ -38,7 +38,7 @@ binds {
     MOD+SHIFT+ESCAPE                     { show-hotkey-overlay; }
 
     // ─── Applications ───
-    MOD+RETURN                          hotkey-overlay-title="Open Terminal: alacritty" { spawn-sh "alacritty"; }
+    MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
     MOD+G				hotkey-overlay-title="Open Browser: google-chrome" { spawn-sh "google-chrome-stable"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     MOD+SPACE                           hotkey-overlay-title="Open Launcher: fuzzel" { spawn-sh "fuzzel"; }
@@ -172,7 +172,7 @@ binds {
     spawn-sh-at-startup "/usr/lib/polkit-gnome-authentication-agent-1 &" // Polkit
     spawn-sh-at-startup "swww-daemon" // Wallpaper daemon
     spawn-sh-at-startup "swww img /home/juan/Nextcloud/Backgrounds/Landscape_RyanSchroeder.jpg" // Set wallpaper
-    spawn-sh-at-startup "waybar" // Launch waybar
+    //spawn-sh-at-startup "waybar" // Launch waybar
     //spawn-sh-at-startup "swaybg -i ~/Nextcloud/Backgrounds/Landscape_RyanSchroeder.jpg -m fill"
     spawn-at-startup "mako"
     spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "before-sleep" "swaylock -f"
@@ -195,7 +195,7 @@ binds {
 
         focus-ring {
                 width 1
-            active-color "#00ac89"
+            active-color "#2b47fb"
             inactive-color "#505050"
         }
 
