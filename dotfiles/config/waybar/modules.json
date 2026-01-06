@@ -74,7 +74,7 @@
   // Power Menu
   "custom/exit": {
     "format": " 󰐥 ",
-    "on-click": "~/.config/waybar/scripts/power-menu.sh",
+    "on-click": "~/.config/waybar/scripts/poweroff.sh",
     "tooltip-format": "Power Menu"
   },
 
@@ -103,7 +103,7 @@
     "tooltip": false
   },
 
-  "niri/language": {
+  "sway/language": {
     "format": "/ K {short}"
   },
 
@@ -154,7 +154,7 @@
     "icon": false
   },
 
-  // backlight:
+  //backlight:
   "backlight": {
     "format": "{icon} {percent}%",
     "format-icons": [

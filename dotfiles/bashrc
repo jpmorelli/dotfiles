@@ -146,4 +146,3 @@ export PATH="$PATH:~/.cargo/bin/"
 
 ### Starship prompt
 # eval "$(starship init bash)"
-
