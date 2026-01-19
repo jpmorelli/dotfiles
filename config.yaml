@@ -44,7 +44,7 @@ dotfiles:
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
-    chmod: '775'
+    chmod: '755'
   d_fuzzel:
     src: config/fuzzel
     dst: ~/.config/fuzzel
