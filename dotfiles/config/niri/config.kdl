@@ -39,7 +39,7 @@ binds {
 
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
-    MOD+G				hotkey-overlay-title="Open Browser: google-chrome" { spawn-sh "google-chrome-stable"; }
+    MOD+G				hotkey-overlay-title="Open Browser: Brave" { spawn-sh "brave"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     MOD+SPACE                           hotkey-overlay-title="Open Launcher: fuzzel" { spawn-sh "fuzzel"; }
 
@@ -137,7 +137,7 @@ binds {
     MOD+TAB                             { focus-workspace-previous; }
 
     // ─── Layout Controls ───
-    MOD+CTRL+F                          { expand-column-to-available-width; }
+    MOD+F                          { expand-column-to-available-width; }
     MOD+C                               { center-column; }
     MOD+CTRL+C                          { center-visible-columns; }
     MOD+MINUS                           { set-column-width "-5%"; }
@@ -147,7 +147,7 @@ binds {
 
     // ─── Modes ───
     MOD+T                               { toggle-window-floating; }
-    MOD+F                               { fullscreen-window; }
+    MOD+CTRL+F                               { fullscreen-window; }
     MOD+W                               { toggle-column-tabbed-display; }
 
     // ─── Screenshots ───
@@ -179,6 +179,16 @@ binds {
 
     prefer-no-csd // Disable program decorations
     screenshot-path null // Disable screenshot saving
+
+    // DMS
+	include "dms/colors.kdl"
+	include "dms/layout.kdl"
+	include "dms/alttab.kdl"
+	include "dms/binds.kdl"   
+
+// Autostart Noctalia shell
+    //    spawn-at-startup "qs" "-c" "noctalia-shell"
+
 
 // ────────────── Layout Settings ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout

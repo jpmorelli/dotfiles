@@ -23,6 +23,10 @@ o.numberwidth = 5
 o.relativenumber = true
 o.signcolumn = 'yes:2'
 o.cursorline = true
+o.guifont = "AdwaitaMono Nerd Font:h16"
+o.ignorecase = true       -- set ignorecase
+o.encoding = "utf-8"      -- set encoding=utf-8
+o.termguicolors = true    -- Recomendado para temas modernos
 
 -- Better editing experience
 o.expandtab = true
@@ -87,3 +91,8 @@ o.smoothscroll = true
 -- Map <leader> to space
 g.mapleader = ' '
 g.maplocalleader = ' '
+
+-- Configuración de Plugins y Colores
+-- vim.cmd('colorscheme OceanicNext')
+g.blamer_enabled = 1
+g.blamer_delay = 500

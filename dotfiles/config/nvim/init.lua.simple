@@ -31,6 +31,8 @@ require("lazy").setup({
   { 'preservim/nerdtree' },
   { 'junegunn/fzf', build = "./install --all" },
   { 'jremmen/vim-ripgrep' },
+  { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
   -- Utilidades de edición
   { 'mattn/emmet-vim' },
@@ -39,7 +41,10 @@ require("lazy").setup({
   { 'tpope/vim-surround' },
   { 'tpope/vim-sensible' },
   { 'APZelos/blamer.nvim' },
+  { 'vimwiki/vimwiki' },
 })
+
+
 
 -- 4. Configuración de Plugins y Colores
 vim.cmd('colorscheme OceanicNext')

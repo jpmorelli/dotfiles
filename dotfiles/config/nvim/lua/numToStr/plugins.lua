@@ -42,22 +42,28 @@ require("lazy").setup({
         end,
     },
 
-    -----------------------------------
-    -- Treesitter: Better Highlights --
-    -----------------------------------
-    {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
-        event = { 'BufReadPost', 'BufNewFile' },
-        dependencies = {
-            'nvim-treesitter/nvim-treesitter-textobjects',
-            'nvim-treesitter/nvim-treesitter-refactor',
-            'windwp/nvim-ts-autotag',
-        },
-        config = function()
-            require('numToStr.plugins.treesitter')
-        end,
-    },
+    -------------------------------------
+    ---- Treesitter: Better Highlights --
+    -------------------------------------
+    --{
+    --    'nvim-treesitter/nvim-treesitter',
+    --    build = ':TSUpdate',
+    --    dependencies = {
+    --        'nvim-treesitter/nvim-treesitter-refactor',
+    --        'nvim-treesitter/nvim-treesitter-textobjects',
+    --        'windwp/nvim-ts-autotag',
+    --    },
+    --    config = function()
+    --        -- Aquí va tu configuración de treesitter
+    --        require('nvim-treesitter.configs').setup({
+    --            -- ... tus opciones ...
+    --            refactor = {
+    --                highlight_definitions = { enable = true },
+    --                -- etc...
+    --            },
+    --        })
+    --    end,
+    --},
 
     --------------------------
     -- Editor UI Niceties --
@@ -68,6 +74,11 @@ require("lazy").setup({
         config = function()
             require('numToStr.plugins.indentline')
         end,
+    },
+
+      -- Temas
+    {
+        'mhartington/oceanic-next'
     },
 
     {
@@ -178,64 +189,79 @@ require("lazy").setup({
         end,
     },
 
+    --{
+    --    'numToStr/FTerm.nvim',
+    --    cmd = { 'FTermToggle', 'FTermOpen' },
+    --    config = function()
+    --        require('numToStr.plugins.fterm')
+    --F    end,
+    --},
+
     {
-        'numToStr/FTerm.nvim',
-        cmd = { 'FTermToggle', 'FTermOpen' },
-        config = function()
-            require('numToStr.plugins.fterm')
-        end,
+    'vimwiki/vimwiki',
+    init = function()
+        vim.g.vimwiki_list = {
+            {
+                path = '~/Nextcloud/Notas',
+                syntax = 'markdown',
+                ext = '.md',
+            },
+        }
+    end,
+    cmd = { 'VimwikiIndex', 'VimwikiDiaryIndex' },
+    keys = { '<leader>ww', '<leader>wi' },
     },
 
     -----------------------------------
     -- LSP, Completions and Snippets --
     -----------------------------------
-    {
-        'neovim/nvim-lspconfig',
-        event = { 'BufReadPre', 'BufNewFile' },
-        dependencies = { 'hrsh7th/cmp-nvim-lsp' },
-        config = function()
-            require('numToStr.plugins.lsp.servers')
-        end,
-    },
+    --{
+    --    'neovim/nvim-lspconfig',
+    --    event = { 'BufReadPre', 'BufNewFile' },
+    --    dependencies = { 'hrsh7th/cmp-nvim-lsp' },
+    --    config = function()
+    --        require('numToStr.plugins.lsp.servers')
+    --    end,
+    --},
 
-    {
-        'jose-elias-alvarez/null-ls.nvim',
-        event = { 'BufReadPre', 'BufNewFile' },
-        config = function()
-            require('numToStr.plugins.lsp.null-ls')
-        end,
-    },
+    --{
+    --    'jose-elias-alvarez/null-ls.nvim',
+    --    event = { 'BufReadPre', 'BufNewFile' },
+    --    config = function()
+    --        require('numToStr.plugins.lsp.null-ls')
+    --    end,
+    --},
 
-    {
-        'hrsh7th/nvim-cmp',
-        event = 'InsertEnter',
-        dependencies = {
-            'L3MON4D3/LuaSnip',
-            'saadparwaiz1/cmp_luasnip',
-            'hrsh7th/cmp-path',
-            'hrsh7th/cmp-buffer',
-            'rafamadriz/friendly-snippets',
-        },
-        config = function()
-            require('numToStr.plugins.lsp.nvim-cmp')
-            require('numToStr.plugins.lsp.luasnip')
-        end,
-    },
+    --{
+    --    'hrsh7th/nvim-cmp',
+    --    event = 'InsertEnter',
+    --    dependencies = {
+    --        'L3MON4D3/LuaSnip',
+    --        'saadparwaiz1/cmp_luasnip',
+    --        'hrsh7th/cmp-path',
+    --        'hrsh7th/cmp-buffer',
+    --        'rafamadriz/friendly-snippets',
+    --    },
+    --    config = function()
+    --        require('numToStr.plugins.lsp.nvim-cmp')
+    --        require('numToStr.plugins.lsp.luasnip')
+    --    end,
+    --},
 
-    {
-        'windwp/nvim-autopairs',
-        event = 'InsertEnter',
-        config = function()
-            require('numToStr.plugins.pairs')
-        end,
-    },
+    --{
+    --    'windwp/nvim-autopairs',
+    --    event = 'InsertEnter',
+    --    config = function()
+    --        require('numToStr.plugins.pairs')
+    --    end,
+    --},
 
-    {
-        'j-hui/fidget.nvim',
-        config = function()
-            require('fidget').setup()
-        end,
-    },
+    --{
+    --    'j-hui/fidget.nvim',
+    --    config = function()
+    --        require('fidget').setup()
+    --    end,
+    --},
 }, {
     -- Configuración de la UI de Lazy (reemplaza al display de Packer)
     ui = {
