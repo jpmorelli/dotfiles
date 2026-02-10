@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Fondo
-swaybg -i /usr/share/backgrounds/nord.jpg -m fill &
+swaybg -i /home/juan/Nextcloud/wallpapers/Landscape_jjforestbird_switzerLand.jpg -m fill &
 
 # Notificaciones
 dunst &
