@@ -26,7 +26,7 @@ input {
 // You will have to remove "/-" and edit it before it takes effect.
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 
-/- output "DP-1" {
+/- output "LVDS-1" {
     mode "1366x768@60.002" // Set resolution and refresh rate
     scale 1 // No scaling (use 2 for HiDPI)
 }
@@ -42,9 +42,10 @@ binds {
     MOD+G				hotkey-overlay-title="Open Browser: Brave" { spawn-sh "brave"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     MOD+SPACE                           hotkey-overlay-title="Open Launcher: fuzzel" { spawn-sh "fuzzel"; }
+    MOD+D hotkey-overlay-title="Launcher" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
 
     // Please choose your own file manager
-    MOD+E                             hotkey-overlay-title="File Manager: Dolphin" { spawn-sh "dolphin"; }
+    MOD+E                             hotkey-overlay-title="File Manager: Thunar" { spawn-sh "thunar"; }
 
     // ─── Audio Controls ───
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -287,3 +288,7 @@ binds {
     hotkey-overlay {
         skip-at-startup
     }
+// ──────────────  Running Noctalia SHELL  ──────────────
+// https://docs.noctalia.dev/getting-started/installation/ 
+
+spawn-at-startup "qs" "-c" "noctalia-shell"
