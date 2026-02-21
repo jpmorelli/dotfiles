@@ -48,6 +48,15 @@ dotfiles:
   d_fuzzel:
     src: config/fuzzel
     dst: ~/.config/fuzzel
+  d_hypr:
+    src: config/hypr
+    dst: ~/.config/hypr
+  d_bspwm:
+    src: config/bspwm
+    dst: ~/.config/bspwm
+  d_sxhkd:
+    src: config/sxhkd
+    dst: ~/.config/sxhkd
 profiles:
   urano-lnx:
     dotfiles:
@@ -62,6 +71,9 @@ profiles:
     - d_qtile
     - d_niri
     - d_nvim
+    - d_hypr
+    - d_bspwm
+    - d_sxhkd
   tierra-lnx:
     dotfiles:
     - f_zshrc

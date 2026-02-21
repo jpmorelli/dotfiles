@@ -42,7 +42,7 @@ binds {
     MOD+G				hotkey-overlay-title="Open Browser: Brave" { spawn-sh "brave"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     MOD+SPACE                           hotkey-overlay-title="Open Launcher: fuzzel" { spawn-sh "fuzzel"; }
-    MOD+D hotkey-overlay-title="Launcher" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    MOD+D 				hotkey-overlay-title="Launcher" { spawn "noctalia-shell-launcher"; }
 
     // Please choose your own file manager
     MOD+E                             hotkey-overlay-title="File Manager: Thunar" { spawn-sh "thunar"; }
@@ -186,6 +186,8 @@ binds {
 	include "dms/layout.kdl"
 	include "dms/alttab.kdl"
 	include "dms/binds.kdl"   
+
+    spawn-at-startup "xwayland-satellite"
 
 // Autostart Noctalia shell
     //    spawn-at-startup "qs" "-c" "noctalia-shell"
