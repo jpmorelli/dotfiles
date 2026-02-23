@@ -119,3 +119,28 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+XF86AudioRaiseVolume
+	wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+XF86AudioLowerVolume
+	wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+XF86AudioMute
+	wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+XF86AudioMicMute
+	wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+XF86MonBrightnessUp
+	brightnessctl -e4 -n2 set 5%+
+XF86MonBrightnessDown
+	brightnessctl -e4 -n2 set 5%-
+
+# Requires playerctl
+XF86AudioNext
+	playerctl next
+XF86AudioPause
+	playerctl play-pause
+XF86AudioPlay
+	playerctl play-pause
+XF86AudioPrev
+	playerctl previous
+
+
