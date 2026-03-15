@@ -38,11 +38,12 @@ binds {
     MOD+SHIFT+ESCAPE                     { show-hotkey-overlay; }
 
     // ─── Applications ───
-    MOD+RETURN                          hotkey-overlay-title="Open Terminal: Alacritty" { spawn-sh "alacritty"; }
-    MOD+G				hotkey-overlay-title="Open Browser: Brave" { spawn-sh "brave"; }
+    MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
+    MOD+B				hotkey-overlay-title="Open Browser: Brave" { spawn-sh "brave"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
-    MOD+SPACE                           hotkey-overlay-title="Open Launcher: fuzzel" { spawn-sh "fuzzel"; }
-    MOD+D 				hotkey-overlay-title="Launcher" { spawn "noctalia-shell-launcher"; }
+    MOD+D                               hotkey-overlay-title="Open Launcher: fuzzel" { spawn-sh "fuzzel"; }
+
+    Mod+Space { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
 
     // Please choose your own file manager
     MOD+E                             hotkey-overlay-title="File Manager: Thunar" { spawn-sh "thunar"; }
@@ -180,12 +181,6 @@ binds {
 
     prefer-no-csd // Disable program decorations
     screenshot-path null // Disable screenshot saving
-
-    // DMS
-	include "dms/colors.kdl"
-	include "dms/layout.kdl"
-	include "dms/alttab.kdl"
-	include "dms/binds.kdl"   
 
     spawn-at-startup "xwayland-satellite"
 

@@ -1,6 +1,6 @@
 {
   // Workspaces
-  "niri/workspaces": {
+  "sway/workspaces": {
     "on-click": "activate"
   },
 
@@ -22,7 +22,7 @@
   },
 
   // niri Window
-  "niri/window": {
+  "sway/window": {
     "format": "{}",
     "rewrite": {
       "(.*) - Brave": "$1",
@@ -91,7 +91,7 @@
 
   // System tray
   "tray": {
-    "icon-size": 21,
+    "icon-size": 16,
     "spacing": 10
   },
 
@@ -111,8 +111,8 @@
   "battery": {
     "states": {
       // "good": 95,
-      "warning": 30,
-      "critical": 15
+      "warning": 20,
+      "critical": 10
     },
     "format": "{icon} {capacity}%",
     "format-charging": "  {capacity}%",
