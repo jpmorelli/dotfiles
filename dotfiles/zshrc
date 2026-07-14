@@ -37,3 +37,16 @@ setopt PROMPT_SUBST
 
 PROMPT='%F{magenta}%n%f%F{242}@%f%F{blue}%m%f %F{242}in%f %F{green}%~%f%F{red}${vcs_info_msg_0_}%f
 %(?.%F{green}%B❯%b%f .%F{red}%B❯%b%f) '
+
+export PATH=/home/juan/.opencode/bin:$PATH
+export PATH=/opt/nvim-linux-x86_64/bin/:$PATH
+
+alias dotdrop=/home/juan/.dotfiles/dotdrop.sh
+
+# Colors
+alias ls='ls --color=auto'
+alias ll='ls -la --color=auto'
+alias la='ls -a --color=auto'
+alias grep='grep --color=auto'
+alias diff='diff --color=auto'
+alias ip='ip -color=auto'
