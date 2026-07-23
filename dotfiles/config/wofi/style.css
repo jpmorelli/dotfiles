@@ -1,20 +1,7 @@
-@import url('/home/eli/.cache/wal/colors-waybar.css');
-
-@define-color mauve  @color9;
-@define-color red  @color9;
-@define-color lavender  @color7;
-@define-color text  @color7;
-@keyframes fadeIn {
-    0% {
-    }
-    100% {
-    }
-}
-
 * {
     all:unset;
-    font-family: 'CodeNewRoman Nerd Font Mono', monospace;
-    font-size: 18px;
+    font-family: 'JetBrainsMono Nerd Font', monospace;
+    font-size: 14px;
     outline: none;
     border: none;
     text-shadow:none;
@@ -24,12 +11,12 @@
 window {
     all:unset;
     padding: 20px;
-    border-radius: 0px;
-    background-color: alpha(@background,.5);
+    border-radius: 20px;
+    background-color: #1e1e2e;
 }
 #inner-box {
     margin: 2px;
-    padding: 5px
+    padding: 5px;
     border: none;
 }
 #outer-box {    
@@ -48,14 +35,13 @@ window {
     padding: 20px;
     border: none;
     outline: none;
-    color: @text;
-    box-shadow: 1px 1px 5px rgba(0,0,0, .5);
+    color: #cdd6f4;
     border-radius:10;
-    background-color: alpha(@background,.2);
+    background-color: #313244;
 }
 #input image {
     border: none;
-    color: @red;
+    color: #cba6f7;
     padding-right:10px;
 }
 #input * {
@@ -66,19 +52,12 @@ window {
 #input:focus {
     outline: none;
     border: none;
-
     border-radius:10;
 }
 #text {
     margin: 5px;
     border: none;
-    color: @text;
-    outline: none;
-}
-#text {
-    margin: 5px;
-    border: none;
-    color: @text;
+    color: #cdd6f4;
     outline: none;
 }
 #entry {
@@ -88,8 +67,7 @@ window {
 }
 #entry arrow {
     border: none;
-    color: @lavender;
-
+    color: #b4befe;
 }
 #entry:selected {
     box-shadow: 1px 1px 5px rgba(255,255,255, .03);
@@ -98,8 +76,8 @@ window {
     background-color:transparent;
 }
 #entry:selected #text {
-    color: @mauve;
+    color: #cba6f7;
 }
 #entry:drop(active) {
-    background-color: @lavender !important;
+    background-color: #b4befe !important;
 }
