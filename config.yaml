@@ -78,7 +78,6 @@ profiles:
     dotfiles:
     - f_zshrc
     - d_waybar
-    - f_zshrc
     - f_starship.toml
     - d_wofi
     - f_bashrc

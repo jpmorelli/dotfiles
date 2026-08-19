@@ -149,3 +149,6 @@ export PATH="$PATH:~/.cargo/bin/"
 # opencode
 export PATH=/home/juan/.opencode/bin:$PATH
 . "$HOME/.cargo/env"
+
+# Hermes Agent — ensure ~/.local/bin is on PATH
+export PATH="$HOME/.local/bin:$PATH"
