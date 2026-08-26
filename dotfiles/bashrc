@@ -144,11 +144,11 @@ fi
 #fi
 export PATH="$PATH:~/.cargo/bin/"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+### Starship prompt
+# eval "$(starship init bash)"
+
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # opencode
 export PATH=/home/juan/.opencode/bin:$PATH
 . "$HOME/.cargo/env"
-
-# Hermes Agent — ensure ~/.local/bin is on PATH
-export PATH="$HOME/.local/bin:$PATH"

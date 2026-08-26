@@ -1,83 +1,25 @@
-* {
-    all:unset;
-    font-family: 'JetBrainsMono Nerd Font', monospace;
-    font-size: 14px;
-    outline: none;
-    border: none;
-    text-shadow:none;
-    background-color:transparent;
-}
-
 window {
-    all:unset;
-    padding: 20px;
-    border-radius: 20px;
-    background-color: #1e1e2e;
-}
-#inner-box {
-    margin: 2px;
-    padding: 5px;
-    border: none;
-}
-#outer-box {    
-    border: none;
-}
-#scroll {
-    margin: 0px;
-    padding: 30px;
-    border: none;
-}
-#input {
-    all:unset;
-    margin-left:20px;
-    margin-right:20px;
-    margin-top:20px;
-    padding: 20px;
-    border: none;
-    outline: none;
-    color: #cdd6f4;
-    border-radius:10;
-    background-color: #313244;
-}
-#input image {
-    border: none;
-    color: #cba6f7;
-    padding-right:10px;
-}
-#input * {
-    border: none;
-    outline: none;
-}
-
-#input:focus {
-    outline: none;
-    border: none;
-    border-radius:10;
-}
-#text {
-    margin: 5px;
-    border: none;
-    color: #cdd6f4;
-    outline: none;
-}
-#entry {
-    border: none;
-    margin: 5px;
+    background-color: #2E3440;
+    border: 2px solid #88C0D0;
+    border-radius: 10px;
     padding: 10px;
 }
-#entry arrow {
+
+#input {
+    background-color: #3B4252;
+    color: #ECEFF4;
+    padding: 6px;
     border: none;
-    color: #b4befe;
 }
+
+#entry {
+    background-color: #3B4252;
+    color: #E5E9F0;
+    padding: 6px;
+}
+
 #entry:selected {
-    box-shadow: 1px 1px 5px rgba(255,255,255, .03);
-    border: none;
-    border-radius: 20px;
-    background-color:transparent;
+    background-color: #88C0D0;
+    color: #2E3440;
 }
-#entry:selected #text {
-    color: #cba6f7;
-}
-#entry:drop(active) {
-    background-color: #b4befe !important;
-}
+

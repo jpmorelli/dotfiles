@@ -35,6 +35,7 @@ dotfiles:
   f_vimrc:
     src: vimrc
     dst: ~/.vimrc
+    chmod: '664'
   d_qtile:
     src: config/qtile
     dst: ~/.config/qtile
@@ -85,4 +86,4 @@ profiles:
     - f_p10k.zsh
     - f_vimrc
     - d_fuzzel
-    - d_nvim  
+    - d_nvim
