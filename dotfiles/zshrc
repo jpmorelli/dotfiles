@@ -1,52 +1,54 @@
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# No greeting
+unsetopt BEEP
+
+# Aliases
+alias neofetch="neofetch --ascii /usr/local/share/logo.txt | sed 's/.*/\x1b[93m&\x1b[0m/'"
+alias ls='ls --color=auto'
 
 # History
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
-setopt SHARE_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_REDUCE_BLANKS
-setopt HIST_FIND_NO_DUPS
-setopt INC_APPEND_HISTORY
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
+setopt HIST_IGNORE_DUPS SHARE_HISTORY
 
-# Completion
+# Autocompletado
 autoload -Uz compinit && compinit
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*:descriptions' format '%F{yellow}-- %d --%f'
-zstyle ':completion:*' squeeze-slashes true
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# Syntax highlighting
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_STYLES[command]='fg=#ff7d2e'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=#ff7d2e'
+ZSH_HIGHLIGHT_STYLES[function]='fg=#ff7d2e'
+ZSH_HIGHLIGHT_STYLES[keyword]='fg=#ef5a33'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=#fec431'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=#fec431'
+ZSH_HIGHLIGHT_STYLES[comment]='fg=#555555'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#ee5a6f'
+
+# Autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#555555'
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Prompt
-autoload -Uz vcs_info
-precmd() { vcs_info }
+autoload -U colors && colors
 
-zstyle ':vcs_info:git*+vi:*' enable git
-zstyle ':vcs_info:git*+vi:*' formats ' %F{cyan}(%b)%f'
-zstyle ':vcs_info:git*+vi:*' actionformats ' %F{cyan}(%b|%a)%f'
-zstyle ':vcs_info:git*+vi:*' stagedstr '%F{green}●%f'
-zstyle ':vcs_info:git*+vi:*' unstagedstr '%F{yellow}●%f'
+_SEP=$''
+_BOLT=$''
+
+_git_info() {
+    local branch
+    branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
+    if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
+        echo -n " %K{yellow}%F{black}${_SEP} ${branch} %f%k%F{yellow}${_SEP}%f"
+    else
+        echo -n " %K{green}%F{black}${_SEP} ${branch} %f%k%F{green}${_SEP}%f"
+    fi
+}
 
 setopt PROMPT_SUBST
+PROMPT='%K{202}%F{yellow} ${_BOLT}%F{black} %n@%m %f%k%F{202}%K{238}${_SEP}%F{white} %~ %f%k%F{238}${_SEP}%f$(_git_info) '
 
-PROMPT='%F{magenta}%n%f%F{242}@%f%F{blue}%m%f %F{242}in%f %F{green}%~%f%F{red}${vcs_info_msg_0_}%f
-%(?.%F{green}%B❯%b%f .%F{red}%B❯%b%f) '
-
-export PATH=/home/juan/.opencode/bin:$PATH
-export PATH=/opt/nvim-linux-x86_64/bin/:$PATH
-
-alias dotdrop=/home/juan/.dotfiles/dotdrop.sh
-
-# Colors
-alias ls='ls --color=auto'
-alias ll='ls -la --color=auto'
-alias la='ls -a --color=auto'
-alias grep='grep --color=auto'
-alias diff='diff --color=auto'
-alias ip='ip -color=auto'
+# local binaries (tree-sitter, node)
+if [ -d "$HOME/.local/bin" ] ; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi

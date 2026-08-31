@@ -35,7 +35,7 @@ dotfiles:
   f_vimrc:
     src: vimrc
     dst: ~/.vimrc
-    chmod: '664'
+    chmod: '644'
   d_qtile:
     src: config/qtile
     dst: ~/.config/qtile

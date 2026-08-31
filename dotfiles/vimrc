@@ -13,8 +13,9 @@ Plug 'tpope/vim-sensible'
 Plug 'vimwiki/vimwiki'
 Plug 'mhartington/oceanic-next' "VIM theme
 Plug 'arcticicestudio/nord-vim'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive' "Required by airline to display the git branch
 Plug 'jcherven/jummidark.vim'
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "fast, fuzzy finding files and performing content-based searches across your project.
 Plug 'jremmen/vim-ripgrep'
@@ -23,6 +24,7 @@ Plug 'ryanoasis/vim-devicons' "Provides a file system explorer with nice icons.
 Plug 'metakirby5/codi.vim'
 Plug 'preservim/nerdcommenter' "Essential for fast commenting/uncommenting.
 Plug 'tpope/vim-surround' "A must-have for manipulating surrounding characters (quotes, parentheses, tags, etc.)
+Plug 'APZelos/blamer.nvim' "Shows Git blame information inline, which can be very useful for context.
 Plug 'jiangmiao/auto-pairs' "Automatic Brackets/Paren Closing
 
 call plug#end()
